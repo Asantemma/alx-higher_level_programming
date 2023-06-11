@@ -11,6 +11,6 @@ if __name__ == "__main__":
         else:
             print("{} arguments:".format(len_argv - 1))
         x = 1
-        while !(x > len_argv):
+        while x < len_argv:
             print("{}: {}".format(x, sys.argv[x]))
             x += 1
