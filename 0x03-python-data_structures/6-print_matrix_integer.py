@@ -6,4 +6,4 @@ def print_matrix_integer(matrix=[[]]):
                 print("{:d}".format(column), end=" "
                       if column != row[-1] else "\n")
     else:
-        print("No matrix")
+        print()
