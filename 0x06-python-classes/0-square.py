@@ -2,6 +2,6 @@
 """ A square module """
 
 class Square:
-""" Defines a square """
+        """ Defines a square """
 
-    pass
+pass
