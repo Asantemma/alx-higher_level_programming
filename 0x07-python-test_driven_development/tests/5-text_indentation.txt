@@ -1,0 +1,65 @@
+==================================
+From ``5-text_indentation`` module
+==================================
+
+Using ``text_indentation`` function
+===================================
+
+
+Importing ``text_indentation`` from the module
+-----------------------------------------------
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+start test
+
+=====
+checking for module docstring
+        >>> m = __import__("5-text_indentation").__doc__
+        >>> len(m) > 5
+        True
+
+====
+checking function docstring for module
+
+        >>> f = text_indentation.__doc__
+        >>> len(f) > 5
+        True
+
+====
+Test if function works well:
+
+    >>> text_indentation("does: the function. work well ?")
+    does:
+    <BLANKLINE>
+    the function.
+    <BLANKLINE>
+    work well ?
+    <BLANKLINE>
+
+====
+checking when wrong type is passed
+
+    >>> text_indentation(200)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+====
+cheacking when None is passed
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+====
+    checking when no arguement is passed
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+=====
+end of test

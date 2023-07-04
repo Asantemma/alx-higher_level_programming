@@ -1,0 +1,69 @@
+==========================================
+Test cases for the 0-add_integer module
+==========================================
+
+The ``add_integer()`` module accepts an integer or float and returns
+the sum in integer.
+It raises an ``exception`` if the argument is not an int or float.
+
+Importing ``add_integer()`` function
+-----------------------------------------
+        >>> add_integer = __import__("0-add_integer").add_integer
+
+checking for module docstring
+
+        >>> mod_doc = __import__("0-add_integer").__doc__
+        >>> len(mod_doc) > 3
+        True
+
+checking for function docstring
+
+        >>> func_doc = add_integer.__doc__
+        >>> len(func_doc) > 1
+        True
+
+checking addition of positive integer
+
+        >>> add_integer(7, 1)
+        8
+
+checking addition of negative integers
+
+        >>> add_integer(-7, -1)
+        -8
+
+Check for float and integer addition:
+        >>> add_integer(7.0, 1)
+        8
+
+Check for positive and negative number:
+    >>> add_integer(-1, 9)
+    8
+
+Check for string and integer:
+    >>> add_integer("ama", 7)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Check for addition over multiple values:
+    >>> [add_integer(i, i) for i in range(4)]
+    [0, 2, 4, 6]
+
+Check no args:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+Check one arg:
+    >>> add_integer(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'b'
+
+Check more than 2 args:
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes 2 positional arguments but 3 were given
