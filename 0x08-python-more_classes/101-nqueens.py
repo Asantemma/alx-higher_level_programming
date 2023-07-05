@@ -21,9 +21,10 @@ if __name__ == "__main__":
         print("N must be at least 4")
         exit(1)
 
-#initializing the chessboard
+# initializing the chessboard
 for i in range(size):
     board.append([i, None])
+
 
 def queen_exists_in_same_column(column):
     """Checks if a queen already exists in the given column"""
@@ -31,6 +32,7 @@ def queen_exists_in_same_column(column):
         if column == board[row][1]:
             return True
     return False
+
 
 def reject_placement(row, column):
     """Determine whether or not to reject the queen placement"""
@@ -43,10 +45,12 @@ def reject_placement(row, column):
         i += 1
     return True
 
+
 def clear_board(row):
     """Clear the board from the point of failure onwards"""
     for i in range(row, size):
         board[i][1] = None
+
 
 def find_solutions(row):
     """Recursive backtracking function to find the solutions"""
@@ -59,6 +63,6 @@ def find_solutions(row):
             else:
                 find_solutions(row + 1)
 
+
 # Start the recursive process at the first row (row 0)
 find_solutions(0)
-
