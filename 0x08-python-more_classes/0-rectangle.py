@@ -4,5 +4,5 @@
 
 class Rectangle:
 
-""" AN EMPTY CLASS"""
+    """ AN EMPTY CLASS"""
     pass
