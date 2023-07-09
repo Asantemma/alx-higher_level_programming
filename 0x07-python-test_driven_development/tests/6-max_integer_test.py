@@ -65,5 +65,5 @@ class TestMaxInteger(unittest.TestCase):
         ints_and_floats = [1.53, 17.5, -19, 16, 7]
         self.assertEqual(max_integer(ints_and_floats), 17.5)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
