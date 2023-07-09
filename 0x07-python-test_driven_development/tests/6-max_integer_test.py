@@ -18,12 +18,14 @@ class TestMaxInteger(unittest.TestCase):
             checks for the highest positive integer
         """
         self.assertEqual(max_integer([3, 5, 1, 7]), 7)
+        self.assertEqual(max_integer([7, 5, 1, 4]), 7)
 
     def test_negative(self):
         """
-            Checks for highest negative integer
+            Checks for highest negative integer and one negative in a list
         """
         self.assertEqual(max_integer([-3, -7, -1, -5]), -1)
+        self.assertEqual(max_integer([3, 4, -1, 5]), 5)
 
      def test_positive_float(self):
         """
@@ -95,5 +97,5 @@ class TestMaxInteger(unittest.TestCase):
 
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
