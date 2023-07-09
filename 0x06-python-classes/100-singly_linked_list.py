@@ -22,7 +22,7 @@ class Node:
         Returns:
             int: Data stored in the node.
         """
-        return self._data
+        return self.__data
 
     @data.setter
     def data(self, value):
@@ -85,7 +85,7 @@ class SinglyLinkedList:
         """
         new_node = Node(value)
         if self.head is None or value < self.head.data:
-            new_node.next_node = self._head
+            new_node.next_node = self.head
             self.head = new_node
         else:
             current = self.head
