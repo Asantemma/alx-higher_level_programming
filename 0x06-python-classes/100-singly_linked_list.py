@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 class Node:
     """
     Node class represents a node of a singly linked list.
@@ -73,7 +75,7 @@ class SinglyLinkedList:
         """
         Initializes an empty singly linked list.
         """
-        self.__head = None
+        self.head = None
 
     def sorted_insert(self, value):
         """
@@ -84,13 +86,13 @@ class SinglyLinkedList:
         """
         new_node = Node(value)
 
-        if self.__head is None:
-            self.__head = new_node
-        elif value < self.__head.data:
-            new_node.next_node = self.__head
-            self.__head = new_node
+        if self.head is None:
+            self.head = new_node
+        elif value < self.head.data:
+            new_node.next_node = self.head
+            self.head = new_node
         else:
-            current_node = self.__head
+            current_node = self.head
             while (current_node.next_node is not None and
                     current_node.next_node.data < value):
                 current_node = current_node.next_node
@@ -104,10 +106,10 @@ class SinglyLinkedList:
         Returns:
             A string representation of the linked list.
         """
-        if self.__head is None:
+        if self.head is None:
             return ""
 
-        current_node = self.__head
+        current_node = self.head
         result = str(current_node.data) + "\n"
 
         while current_node.next_node is not None:
