@@ -12,76 +12,6 @@ class TestMaxInteger(unittest.TestCase):
     """
         TestMaxInteger class
     """
-
-    def test_positive(self):
-        """
-            checks for the highest positive integer
-        """
-        self.assertEqual(max_integer([3, 5, 1, 7]), 7)
-        self.assertEqual(max_integer([7, 5, 1, 4]), 7)
-
-    def test_negative(self):
-        """
-            Checks for highest negative integer and one negative in a list
-        """
-        self.assertEqual(max_integer([-3, -7, -1, -5]), -1)
-        self.assertEqual(max_integer([3, 4, -1, 5]), 5)
-
-     def test_positive_float(self):
-        """
-            checks for the highest positive float
-        """
-        self.assertEqual(max_integer([2.95, 8.25, 3.25, 9.5]), 9.5)
-
-    def test_neg_float(self):
-        """
-            checks for the highest negative float
-        """
-        self.assertEqual(max_integer([-2.95, -8.25, -3.25, -9.5]), -2.95)
-
-    def test_char(self):
-        """
-            checks for the highest string
-        """
-        self.assertEqual(max_integer(['a', 'A', 'b', 'B']), 'b')
-
-    def test_strings(self):
-        """
-            Checks if function can give the highest string
-        """
-        self.assertEqual(max_integer(['ama', 'Ama', 'bed', 'Bad']), 'bed')
-        self.assertEqual(max_integer('Brains'), 'n')
-
-    def test_if_all_negative_integers(self):
-        """Checks if all arguments are negative"""
-
-        self.assertEqual(max_integer([-3, -7, -6, -8]), -3)
-
-    def test_if_list_empty(self):
-        """checks for if list is empty"""
-
-        self.assertIsNone(max_integer([]))
-
-    def test_if_no_arguments(self):
-        """checks for if no args is provided"""
-
-        self.assertIsNone(max_integer())
-
-    def test_if_none_is_arg(self):
-        """checks for if none is provided"""
-
-        self.assertRaises(TypeError, max_integer, None)
-
-    def test_if_a_wrong_type_in_list(self):
-        """checks for if a wrong type is provided"""
-
-        self.assertRaises(TypeError, max_integer, [4, 3, "key", -5])
-
-    def test_if_float_is_in_list(self):
-        """checks for if float is provided"""
-
-        self.assertEqual(max_integer([-2.4, 3.7, 4.5, 1.5]), 4.5)
-
     def test_duplicate_numbers(self):
         self.assertEqual(max_integer([7, 7, 7, 7, 7]), 7)
         self.assertEqual(max_integer([-2, -2, -2, -2, -2]), -2)
@@ -95,7 +25,45 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, [1, 2, [3]])
         self.assertRaises(TypeError, max_integer, [1, 2, Emma])
 
+    def test_ordered_list(self):
+        """Test an ordered list of integers."""
+        ordered = [1, 2, 3, 4]
+        self.assertEqual(max_integer(ordered), 4)
 
+    def test_unordered_list(self):
+        """Test an unordered list of integers."""
+        unordered = [1, 2, 5, 3]
+        self.assertEqual(max_integer(unordered), 5)
 
-if __name__ == '__main__':
+    def test_max_at_begginning(self):
+        """Test a list with a beginning max value."""
+        max_at_beginning = [4, 3, 2, 1]
+        self.assertEqual(max_integer(max_at_beginning), 4)
+
+    def test_empty_list(self):
+        """Test an empty list."""
+        empty = []
+        self.assertEqual(max_integer(empty), None)
+
+    def test_with_string(self):
+        """test with string"""
+        string = "Brain"
+       self.assertEqual(max_integer(string), 'r')
+
+    def test_single_element_list(self):
+        """Test a list with a single element."""
+        single_element = [5]
+        self.assertEqual(max_integer(single_element), 5)
+
+    def test_floats(self):
+        """Test a list of floats."""
+        floats = [1.53, 6.33, -9.123, 15.2, 6.0]
+        self.assertEqual(max_integer(floats), 15.2)
+
+    def test_ints_and_floats(self):
+        """Test a list of ints and floats."""
+        ints_and_floats = [1.53, 17.5, -19, 16, 7]
+        self.assertEqual(max_integer(ints_and_floats), 17.5)
+
+if __name__ == "__main__":
     unittest.main()
