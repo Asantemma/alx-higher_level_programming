@@ -11,8 +11,6 @@ class Node:
             data: Data to be stored in the node.
             next_node: Next node in the linked list.Defaults to None.
         """
-        self._data = None
-        self._next_node = None
         self.data = data
         self.next_node = next_node
 
@@ -39,7 +37,7 @@ class Node:
         """
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
-        self._data = value
+        self.__data = value
 
     @property
     def next_node(self):
@@ -49,7 +47,7 @@ class Node:
         Returns:
             Node: Next node in the linked list.
         """
-        return self._next_node
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
@@ -64,7 +62,7 @@ class Node:
         """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object or None")
-        self._next_node = value
+        self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -76,7 +74,7 @@ class SinglyLinkedList:
         """
         Initialize an empty SinglyLinkedList object.
         """
-        self._head = None
+        self.head = None
 
     def sorted_insert(self, value):
         """
@@ -86,11 +84,11 @@ class SinglyLinkedList:
             value: Value of the new Node to be inserted.
         """
         new_node = Node(value)
-        if self._head is None or value < self._head.data:
+        if self.head is None or value < self.head.data:
             new_node.next_node = self._head
-            self._head = new_node
+            self.head = new_node
         else:
-            current = self._head
+            current = self.head
             cnn = current.next_node
             while cnn is not None and cnn.data < value:
                 current = cnn
@@ -104,7 +102,7 @@ class SinglyLinkedList:
         Returns:
             str: String representation of the linked list.
         """
-        current = self._head
+        current = self.head
         list_str = ""
         while current is not None:
             list_str += str(current.data) + "\n"
