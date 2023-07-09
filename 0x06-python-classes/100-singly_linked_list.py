@@ -89,22 +89,19 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current = self.head
-            cnn = current.next_node
-            while cnn is not None and cnn.data < value:
-                current = cnn
-            new_node.next_node = cnn
-            cnn = new_node
+            while (current.next_node is not None and
+                    value >= current.next_node.data):
+                current = current.next_node
+            new_node.next_node = current.next_node
+            current.next_node = new_node
 
     def __str__(self):
         """
-        Convert the SinglyLinkedList object to a string representation.
-
-        Returns:
-            str: String representation of the linked list.
+        Returns a string representation of the linked list.
         """
-        current = self.head
+        node = self.head
         list_str = ""
-        while current is not None:
-            list_str += str(current.data) + "\n"
-            current = cnn
+        while node is not None:
+            list_str += str(node.data) + "\n"
+            node = node.next_node
         return list_str.rstrip()
