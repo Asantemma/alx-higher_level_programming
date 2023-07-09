@@ -3,6 +3,7 @@
    Unittest for max_integer
 
 """
+
 import unittest
 max_integer = __import__("6-max_integer").max_integer
 
@@ -78,6 +79,20 @@ class TestMaxInteger(unittest.TestCase):
         """checks for if float is provided"""
 
         self.assertEqual(max_integer([-2.4, 3.7, 4.5, 1.5]), 4.5)
+
+    def test_duplicate_numbers(self):
+        self.assertEqual(max_integer([7, 7, 7, 7, 7]), 7)
+        self.assertEqual(max_integer([-2, -2, -2, -2, -2]), -2)
+
+    def test_mixed_numbers(self):
+        self.assertEqual(max_integer([-5, 0, 5, -10, 9]), 9)
+        self.assertEqual(max_integer([1, 2, -3, 5, -5]), 5)
+
+    def test_invalid_input(self):
+        self.assertRaises(TypeError, max_integer, [1, 2, "3"])
+        self.assertRaises(TypeError, max_integer, [1, 2, [3]])
+        self.assertRaises(TypeError, max_integer, [1, 2, Emma])
+
 
 
 if __name__ == "__main__":
