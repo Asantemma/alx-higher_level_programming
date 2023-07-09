@@ -38,7 +38,7 @@ def reject_placement(row, column):
     if queen_exists_in_same_column(column):
         return False
     i = 0
-    while(i < row):
+    while (i < row):
         if abs(board[i][1] - column) == abs(i - row):
             return False
         i += 1
