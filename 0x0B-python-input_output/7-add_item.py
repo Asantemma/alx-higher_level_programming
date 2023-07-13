@@ -14,10 +14,10 @@ try:
 except Exception:
     save_to_json_file(my_list, filename)
 
-len_of_arg = len(argv)
+arg_len = len(argv)
 
-if len_of_arg > 1:
-    for x in range(1, len_of_arg):
+if arg_len > 1:
+    for x in range(1, arg_len):
         my_list.append(argv[x])
 
     save_to_json_file(my_list, filename)

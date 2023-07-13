@@ -24,7 +24,7 @@ class Student:
         """
 
         if attr is not None:
-            result = {x: self.__dict__[k] for x in self.__dict__.keys() & attr}
+            result = {x: self.__dict__[x] for x in self.__dict__.keys() & attr}
             return result
         else:
             return self.__dict__
