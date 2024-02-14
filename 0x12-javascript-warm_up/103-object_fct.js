@@ -1,7 +1,6 @@
 #!/usr/bin/node
-// increments function value
+// increments integer value
 const myObject = {
-
     type: 'object',
     value: 12
   };
@@ -15,6 +14,3 @@ const myObject = {
   console.log(myObject);
   myObject.incr();
   console.log(myObject);
-
-
-  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
