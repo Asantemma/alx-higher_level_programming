@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Listing 10 commits in a repo"""
+"""Lists 10 commits in a repository"""
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
     import requests
 
