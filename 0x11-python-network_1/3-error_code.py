@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Python script that takes in a URL,sends a 
-request to the URL and displaysthe body of the 
+"""Python script that takes in a URL,sends a
+request to the URL and displaysthe body of the
 response (decoded in utf-8)."""
 
 
